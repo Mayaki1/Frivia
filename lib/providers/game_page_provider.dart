@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 
-class HomePageProvider extends ChangeNotifier{
+class GamePageProvider extends ChangeNotifier{
   final Dio dio = Dio();
+BuildContext context;
+  GamePageProvider({required this.context}){
+    dio.options.baseUrl = 'https://opentdb.com/api.php';
+  }
 }
